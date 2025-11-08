@@ -1,0 +1,2 @@
+SELECT firstName, lastName, city, state 
+FROM person_175 LEFT JOIN address_175 ON person_175.personId = address_175.personId;
