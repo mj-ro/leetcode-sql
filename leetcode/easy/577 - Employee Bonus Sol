@@ -1,0 +1,4 @@
+SELECT Employee.name, Bonus.bonus
+FROM Employee
+FULL OUTER JOIN Bonus USING (empId)
+WHERE bonus < 1000 OR bonus IS NULL;
