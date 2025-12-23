@@ -1,0 +1,19 @@
+--- 183 Customers who never order
+--- Anti-join approach
+--- 198ms, 93.91%
+SELECT c.name AS Customers
+FROM customers c
+LEFT JOIN orders o ON c.id = o.customerId
+WHERE o.customerId IS NULL;
+
+
+--- Except approach: since EXCEPT only returns the selected columns, put it in subquery
+--- 204, 73.53%
+SELECT name AS Customers
+FROM customers
+WHERE id IN
+(SELECT id 
+ FROM customers
+EXCEPT
+SELECT customerId
+FROM orders)

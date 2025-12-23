@@ -1,0 +1,7 @@
+SELECT *
+FROM Cinema
+-- Just check the string literal doesn't equal boring
+WHERE description <> 'boring'
+-- k mod 2 = 0 for all even numbers, else != for odd
+AND id % 2 <> 0
+ORDER BY rating DESC;
